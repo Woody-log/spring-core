@@ -44,11 +44,7 @@ public class SingleTonTest {
     @DisplayName("스프링 컨테이너와 싱글톤")
     public void springContainer() throws Exception {
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-
-        // 1. 조회 : 호출할 때 마다 객체를 생성
         MemberService memberService1 = ac.getBean("memberService", MemberService.class);
-
-        // 2. 조회 : 호출할 때 마다 객체를 생성
         MemberService memberService2 = ac.getBean("memberService", MemberService.class);
 
         // 참조값이 다른 것을 확인
